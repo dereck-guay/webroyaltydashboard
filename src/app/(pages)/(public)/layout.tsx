@@ -1,7 +1,7 @@
-import type { LayoutComponent } from "@/utils/types";
+import type { LayoutComponent } from "~/utils/types";
 
 const PublicLayout: LayoutComponent = ({ children }) => {
-    return <div>{children}</div>;
+	return <div>{children}</div>;
 };
 
 export default PublicLayout;
