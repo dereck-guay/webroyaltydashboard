@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-}
+	experimental: {
+		swcPlugins: [
+			[
+				"next-superjson-plugin",
+				{
+					excluded: [],
+				},
+			],
+		],
+		appDir: true,
+	},
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
