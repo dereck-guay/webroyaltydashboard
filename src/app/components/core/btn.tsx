@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, FC } from "react";
 import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "~/utils/utils";
 
-const btnVariants = cva("inline-flex items-center justify-center rounded", {
+const btnVariants = cva("inline-flex items-center justify-center rounded-sm", {
 	variants: {
 		variant: {
 			default: "bg-primary hover:bg-primary-dark text-white",
@@ -14,7 +14,9 @@ const btnVariants = cva("inline-flex items-center justify-center rounded", {
 		},
 		size: {
 			default: "px-3 py-1 gap-x-2",
-			sm: "px-2 py-0.5 text-xs gap-x-2",
+			sm: "px-2 py-0.5 text-sm gap-x-2",
+			xs: "px-2 py-0.5 text-xs gap-x-2",
+			icon: "px-2 py-1 text-xs",
 		},
 	},
 	defaultVariants: {

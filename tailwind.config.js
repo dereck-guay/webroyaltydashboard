@@ -1,5 +1,3 @@
-const colors = require("tailwindcss/colors");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
@@ -8,15 +6,15 @@ module.exports = {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
-		fontFamily: {
-			sans: ["Poppins", "ui-serif", "Georgia"],
+		extend: {
+			fontFamily: {
+				sans: ["Poppins", "ui-serif", "Georgia"],
+			},
+			colors: {
+				primary: "#4169e1",
+				"primary-dark": "#3759bf",
+			},
 		},
-		colors: {
-			...colors,
-			primary: "#4169e1",
-			"primary-dark": "#3759bf",
-		},
-		extend: {},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/forms")],
 };

@@ -24,6 +24,7 @@ model Customer {
 
 model Project {
     id                String           @id @default(cuid())
+    number            Int              @unique @default(autoincrement())
     userId            String
     projectStatusId   String
     projectPriorityId String
@@ -41,7 +42,7 @@ model Project {
     priority          ProjectPriority  @relation(fields: [projectPriorityId], references: [id])
     actions           ProjectActions[]
 
-    @@index([userId, projectPriorityId, projectStatusId, customerId])
+    @@index([userId, projectPriorityId, projectStatusId, customerId, number])
 }
 
 model ProjectActions {
