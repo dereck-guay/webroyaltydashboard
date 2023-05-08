@@ -1,3 +1,5 @@
+import ProjectForm from "./ProjectForm";
+
 const ProjectsPage = async () => {
 	return (
 		<>
