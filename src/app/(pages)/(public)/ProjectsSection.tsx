@@ -3,8 +3,10 @@ import SectionContainer from "./SectionContainer";
 
 const ProjectsSection = () => {
 	return (
-		<div className="px-7 py-10">
-			<PublicTitle id="projects" caption="Projects" />
+		<div className="relative z-10 bg-white px-20" style={{ height: '500px'}}>
+			<div className="px-7 py-10">
+				<PublicTitle id="projects" caption="Projects" />
+			</div>
 		</div>
 	);
 };

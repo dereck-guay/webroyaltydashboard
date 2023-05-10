@@ -3,9 +3,11 @@ import SectionContainer from "./SectionContainer";
 
 const ContactSection = () => {
 	return (
-		<SectionContainer>
-			<PublicTitle id="contact" caption="Let's chat!" />
-		</SectionContainer>
+		<div className="px-20" style={{ height: "600px" }}>
+			<SectionContainer>
+				<PublicTitle id="contact" caption="Let's chat!" />
+			</SectionContainer>
+		</div>
 	);
 };
 

@@ -19,7 +19,7 @@ const PublicNavbarLink: FC<PublicNavbarLinkProps> = ({
 			target={target}
 			href={href}
 			className={`
-			flex items-center gap-x-2 rounded px-3 py-1 text-sm
+			flex items-center gap-x-2 rounded-sm px-3 py-1 text-sm
 			${
 				isFill
 					? "bg-primary hover:bg-primary-dark"
