@@ -3,9 +3,9 @@ import SectionContainer from "./SectionContainer";
 
 const ProjectsSection = () => {
 	return (
-		<SectionContainer>
+		<div className="px-7 py-10">
 			<PublicTitle id="projects" caption="Projects" />
-		</SectionContainer>
+		</div>
 	);
 };
 

@@ -1,8 +1,8 @@
 import { BsDatabaseFillGear } from "react-icons/bs";
 import { FaPhone } from "react-icons/fa";
 import PublicNavbarLink from "./PublicNavbarLink";
-import { SiIndeed, SiGithub, SiTwitter } from "react-icons/si";
-import Link from 'next/link'
+import { SiIndeed, SiGithub } from "react-icons/si";
+import Link from "next/link";
 
 const PublicNavbar = () => {
 	return (
@@ -17,31 +17,25 @@ const PublicNavbar = () => {
 				</div>
 			</Link>
 			<div className="flex w-full items-center justify-center gap-x-8">
-				<PublicNavbarLink href="#">
-					Home
-				</PublicNavbarLink>
-				<PublicNavbarLink href="#">
-					About
-				</PublicNavbarLink>
-				<PublicNavbarLink href="#">
-					Projects
-				</PublicNavbarLink>
-				<PublicNavbarLink isFill={true} href="#">
-					Contact <FaPhone />
-				</PublicNavbarLink>
+				<PublicNavbarLink href="#">About</PublicNavbarLink>
+				<PublicNavbarLink href="#">Skills</PublicNavbarLink>
+				<PublicNavbarLink href="#">Work</PublicNavbarLink>
+				<PublicNavbarLink href="#">Projects</PublicNavbarLink>
 			</div>
 			<div className="flex w-full items-center justify-end gap-x-8">
-				<PublicNavbarLink href="#" >
-					<SiTwitter className="text-xl" />
-				</PublicNavbarLink>
-				<PublicNavbarLink href="#">
-					<SiIndeed className="text-xl" />
-				</PublicNavbarLink>
-				<PublicNavbarLink
-					href="https://github.com/dereck-guay"
-					target="_blank"
-				>
-					<SiGithub className="text-xl" />
+				<div className="flex items-center justify-end gap-x-4">
+					<PublicNavbarLink href="#">
+						<SiIndeed className="text-xl" />
+					</PublicNavbarLink>
+					<PublicNavbarLink
+						href="https://github.com/dereck-guay"
+						target="_blank"
+					>
+						<SiGithub className="text-xl" />
+					</PublicNavbarLink>
+				</div>
+				<PublicNavbarLink isFill={true} href="#">
+					Contact <FaPhone />
 				</PublicNavbarLink>
 			</div>
 		</nav>
