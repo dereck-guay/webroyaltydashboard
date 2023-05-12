@@ -7,7 +7,7 @@ const WorkSection = () => {
 		<div className="relative z-10 bg-white px-20">
 			<SectionContainer>
 				<PublicTitle id="work" caption="What I do best" />
-				<div className="flex gap-x-4" style={{ height: "500px" }}>
+				<div className="flex gap-x-4 text-sm">
 					<div className="w-full rounded-sm bg-gradient-to-br from-primary-dark to-primary p-4 text-slate-300 shadow shadow-primary">
 						<h2 className="text-lg font-bold text-white">Web Applications</h2>
 						<div className="flex justify-end">
@@ -27,7 +27,11 @@ const WorkSection = () => {
 								<li>
 									Fully <strong className="text-white">secure</strong>
 								</li>
-								<li>Important business metrics at fingers length</li>
+								<li>
+									Important{" "}
+									<strong className="text-white">business metrics</strong> at
+									fingers length
+								</li>
 							</ul>
 							<Image
 								src="/app.svg"
@@ -37,10 +41,12 @@ const WorkSection = () => {
 							/>
 						</div>
 						<div className="pt-4">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit et,
-							ipsam nam numquam eveniet similique repellendus ratione natus cum
-							quos magnam, minima excepturi dicta esse ad est tempora quis!
-							Quibusdam?
+							Our speciality is designing web applications. We know that a lot
+							of businesses rely on spreadsheets and/or a multitude of specific
+							applications to run properly. At WebRoyalty we take great pride in
+							bringing all these technologies to one single tailored "web hub"
+							where you'll have access to all the tools you need to maximize
+							your productivity.
 						</div>
 					</div>
 					<div className="w-full rounded-sm bg-gradient-to-br from-slate-700 to-slate-600 p-4 text-slate-300 shadow shadow-slate-700">
@@ -80,10 +86,11 @@ const WorkSection = () => {
 							/>
 						</div>
 						<div className="pt-4">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit et,
-							ipsam nam numquam eveniet similique repellendus ratione natus cum
-							quos magnam, minima excepturi dicta esse ad est tempora quis!
-							Quibusdam?
+							Our job is to make sure your business stands out. Therefore, we
+							work with great designers to build beautiful and modern websites.
+							We make sure that your websites are not only beautiful but does
+							bring significant results! We put extra efforts into SEO, and
+							Google AddSense to maximize trafic to your website.
 						</div>
 					</div>
 				</div>
