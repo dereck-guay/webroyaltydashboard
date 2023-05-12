@@ -1,6 +1,6 @@
 import prisma from "~/utils/prisma";
 import { currentUser } from "@clerk/nextjs";
-import ProjectList from './ProjectList';
+import ProjectList from "./ProjectList";
 
 async function getProjects() {
 	const user = await currentUser();

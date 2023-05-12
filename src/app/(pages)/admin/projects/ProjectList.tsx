@@ -17,7 +17,7 @@ export type ProjectListProps = {
 		actions: ProjectActions[];
 		status: ProjectStatus;
 		priority: ProjectPriority;
-		customer: Customer;
+		customer: Customer | null;
 	})[];
 	statuses: ProjectStatus[];
 	priorities: ProjectPriority[];
