@@ -8,7 +8,7 @@ const WorkSection = () => {
 			<SectionContainer>
 				<PublicTitle id="work" caption="What I do best" />
 				<div className="flex gap-x-4" style={{ height: "500px" }}>
-					<div className="w-full rounded-sm bg-gradient-to-br from-primary-dark to-primary p-4 text-slate-300">
+					<div className="w-full rounded-sm bg-gradient-to-br from-primary-dark to-primary p-4 text-slate-300 shadow shadow-primary">
 						<h2 className="text-lg font-bold text-white">Web Applications</h2>
 						<div className="flex justify-end">
 							<ul className="list-disc pl-4 pt-10">
@@ -43,7 +43,7 @@ const WorkSection = () => {
 							Quibusdam?
 						</div>
 					</div>
-					<div className="w-full rounded-sm bg-gradient-to-br from-slate-700 to-slate-600 p-4 text-slate-300">
+					<div className="w-full rounded-sm bg-gradient-to-br from-slate-700 to-slate-600 p-4 text-slate-300 shadow shadow-slate-700">
 						<h2 className="text-lg font-bold text-white">Websites</h2>
 
 						<div className="flex justify-end">

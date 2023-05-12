@@ -12,7 +12,7 @@ const PublicNavbar = () => {
 					<BsDatabaseFillGear />
 				</span>
 				<div>
-					<h1 className="font-semibold">Dereck Guay .dev</h1>
+					<h1 className="font-semibold">Dereck Guay</h1>
 					<div className="-mt-1.5 text-xs text-slate-200">WebRoyalty</div>
 				</div>
 			</Link>
