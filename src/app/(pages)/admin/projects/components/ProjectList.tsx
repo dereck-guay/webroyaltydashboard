@@ -95,10 +95,10 @@ const ProjectList: FC<ProjectListProps> = ({
 
 	if (!userId) return <div>Not authed</div>;
 
-		const handleSubmit = async (formData: FormData) => {
-			await createProject(formData);
-			closeProjectModal();
-		}
+	const handleSubmit = async (formData: FormData) => {
+		await createProject(formData);
+		closeProjectModal();
+	};
 
 	return (
 		<>
@@ -193,7 +193,7 @@ const ProjectList: FC<ProjectListProps> = ({
 								</td>
 								<td className="border px-2 py-1">
 									<Link
-										className="text-primary hover:text-primary-dark"
+										className="hover:text-primary-dark text-primary"
 										href={`/admin/projects/${project.number}`}
 									>
 										{project.title}
@@ -253,7 +253,6 @@ const ProjectList: FC<ProjectListProps> = ({
 							<textarea
 								rows={5}
 								className="w-full resize-none rounded-sm border-slate-200 px-2 py-0.5 text-sm"
-								type="text"
 								name="description"
 								placeholder="We're going to do this, and that!"
 							></textarea>
