@@ -55,12 +55,14 @@ const Home = () => {
 						<strong className="text-white">productivity</strong>!
 					</div>
 
-					<Link
-						className="rounded bg-gradient-to-br from-accent-500 to-complementary-500 px-4 py-1 font-bold text-white hover:from-accent-600 hover:to-complementary-600"
-						href="about"
-					>
-						GET IN TOUCH
-					</Link>
+					<div>
+						<Link
+							className="rounded bg-gradient-to-br from-accent-500 to-complementary-500 px-4 py-1 font-bold text-white hover:from-accent-600 hover:to-complementary-600"
+							href="about"
+						>
+							GET IN TOUCH
+						</Link>
+					</div>
 				</div>
 			</main>
 			<div
