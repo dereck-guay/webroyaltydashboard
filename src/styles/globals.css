@@ -7,3 +7,13 @@
 option {
 	font-family: 'Poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+@layer base {
+	html {
+		@apply bg-primary;
+	}
+
+	* {
+		@apply text-secondary-darker;
+	}
+}

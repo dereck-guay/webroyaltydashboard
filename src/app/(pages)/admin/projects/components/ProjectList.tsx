@@ -1,9 +1,16 @@
 "use client";
+import { useAuth } from "@clerk/nextjs";
 import { type FC, useState, type ChangeEventHandler } from "react";
-import { Btn } from "~/app/components/core/btn";
-import { FaPencilAlt, FaPlus, FaTrashAlt } from "react-icons/fa";
+import { Btn } from "~/app/core/components/btn";
+import {
+	FaBan,
+	FaPencilAlt,
+	FaPlus,
+	FaTrashAlt,
+	FaMoneyBill,
+} from "react-icons/fa";
 import Link from "next/link";
-import Modal from "~/app/components/core/modal";
+import Modal from "~/app/core/components/modal";
 import type {
 	Customer,
 	Project,
@@ -11,6 +18,7 @@ import type {
 	ProjectPriority,
 	ProjectStatus,
 } from "@prisma/client";
+import { createProject } from "~/app/_actions/projectActions";
 
 export type ProjectListProps = {
 	projects: (Project & {
@@ -30,6 +38,7 @@ const ProjectList: FC<ProjectListProps> = ({
 	priorities,
 	customers,
 }) => {
+	const { userId } = useAuth();
 	const [projectModalIsOpen, setProjectModalIsOpen] = useState(false);
 	const [newProjectState, setNewProjectState] = useState<Project>();
 	const [filters, setFilters] = useState({
@@ -83,6 +92,13 @@ const ProjectList: FC<ProjectListProps> = ({
 				customerId: e.target?.value ?? "-1",
 			};
 		});
+
+	if (!userId) return <div>Not authed</div>;
+
+		const handleSubmit = async (formData: FormData) => {
+			await createProject(formData);
+			closeProjectModal();
+		}
 
 	return (
 		<>
@@ -217,10 +233,116 @@ const ProjectList: FC<ProjectListProps> = ({
 			{!!projectModalIsOpen && (
 				<Modal
 					title={<div className="font-semibold">Create New Project</div>}
-					footer={<div>Footer</div>}
 					handleClose={closeProjectModal}
 				>
-					Some text
+					<form action={handleSubmit} className="flex flex-col gap-y-2">
+						<input name="userId" type="hidden" value={userId} />
+						<div>
+							<label htmlFor="title">Title</label>
+							<input
+								className="w-full rounded-sm border-slate-200 px-2 py-0.5 text-sm"
+								type="text"
+								id="title"
+								name="title"
+								placeholder="Project title"
+							/>
+						</div>
+
+						<div>
+							<label htmlFor="description">Description</label>
+							<textarea
+								rows={5}
+								className="w-full resize-none rounded-sm border-slate-200 px-2 py-0.5 text-sm"
+								type="text"
+								name="description"
+								placeholder="We're going to do this, and that!"
+							></textarea>
+						</div>
+
+						<div>
+							<label htmlFor="budget">Budget</label>
+							<div className="flex">
+								<input
+									className="w-full rounded-l-sm border-slate-200 px-2 py-0.5 text-sm"
+									type="text"
+									name="budget"
+									placeholder="1000"
+								/>
+								<div className="flex items-center justify-center rounded-r-sm border border-slate-200 bg-slate-100 px-2">
+									<FaMoneyBill />
+								</div>
+							</div>
+						</div>
+
+						<div className="flex items-center gap-x-2">
+							<div className="w-full">
+								<label htmlFor="statusId">Status</label>
+								<select
+									id="statusId"
+									name="statusId"
+									className="w-full rounded-sm border-slate-200 px-2 py-0.5 text-sm"
+								>
+									{statuses.map((status) => {
+										return (
+											<option key={status.id} value={status.id}>
+												{status.title}
+											</option>
+										);
+									})}
+								</select>
+							</div>
+							<div className="w-full">
+								<label htmlFor="priorityId">Status</label>
+								<select
+									id="priorityId"
+									name="priorityId"
+									className="w-full rounded-sm border-slate-200 px-2 py-0.5 text-sm"
+								>
+									{priorities.map((priority) => {
+										return (
+											<option key={priority.id} value={priority.id}>
+												{priority.title}
+											</option>
+										);
+									})}
+								</select>
+							</div>
+							<div className="w-full">
+								<label htmlFor="customerId">Status</label>
+								<select
+									id="customerId"
+									name="customerId"
+									className="w-full rounded-sm border-slate-200 px-2 py-0.5 text-sm"
+								>
+									{customers.map((customer) => {
+										return (
+											<option key={customer.id} value={customer.id}>
+												{customer.name}
+											</option>
+										);
+									})}
+								</select>
+							</div>
+						</div>
+
+						<div className="mt-4 flex items-center justify-between">
+							<div></div>
+							<div className="flex items-center gap-x-2">
+								<Btn type="submit">
+									<FaPlus />
+									Let&apos;s Go!
+								</Btn>
+								<Btn
+									onClick={closeProjectModal}
+									type="button"
+									variant={"secondary"}
+								>
+									<FaBan />
+									Cancel
+								</Btn>
+							</div>
+						</div>
+					</form>
 				</Modal>
 			)}
 		</>

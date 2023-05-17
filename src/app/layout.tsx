@@ -1,6 +1,5 @@
 import "~/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import ReactQueryProvider from "~/utils/QueryProvider";
 
 export const metadata = {
 	title: "WebRoyalty",
@@ -17,7 +16,7 @@ export default function RootLayout({
 		<ClerkProvider>
 			<html lang="en">
 				<body>
-					<ReactQueryProvider>{children}</ReactQueryProvider>
+					{children}
 				</body>
 			</html>
 		</ClerkProvider>
